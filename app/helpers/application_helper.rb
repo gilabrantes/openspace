@@ -10,7 +10,7 @@ module ApplicationHelper
 	end
 
 	def d_back(discussion)
-		out = "Back links: " + link_to(discussion.space.name, space_url(:id => discussion.space.alias)) + " / " + link_to(discussion.subject, discussion_url(:id => discussion.id))
+		out = link_to("Spaces", :controller => "space") + " &gt; " + link_to(discussion.space.name, space_url(:id => discussion.space.alias)) + " &gt; " + link_to(discussion.subject, discussion_url(:id => discussion.id))
 	end
 
 end

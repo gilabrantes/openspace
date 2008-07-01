@@ -1,1 +1,3 @@
+<h1><%= link_to "Spaces", :action => "index" %> &gt; <%= link_to @space.name, space_url(@space.alias) %> </h1>
+
 <%= render :partial => "discussion", :collection => @discussions %>
