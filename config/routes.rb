@@ -30,8 +30,8 @@ ActionController::Routing::Routes.draw do |map|
   #     admin.resources :products
   #   end
 
-	map.space 'space/:id', :controller => "space", :action => "view"
-	map.discussion 'discussion/:id', :controller => "discussion", :action => "view"
+	map.space 'space/view/:id', :controller => "space", :action => "view"
+	map.discussion 'discussion/view/:id', :controller => "discussion", :action => "view"
 
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
   map.root :controller => "space"

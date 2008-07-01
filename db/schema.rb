@@ -9,14 +9,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080630162813) do
+ActiveRecord::Schema.define(:version => 20080701170454) do
 
   create_table "comments", :force => true do |t|
     t.text     "body"
-    t.integer  "answer",     :limit => 11
-    t.integer  "user_id",    :limit => 11
+    t.integer  "answer",        :limit => 11
+    t.integer  "user_id",       :limit => 11
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "discussion_id", :limit => 11
   end
 
   create_table "discussions", :force => true do |t|

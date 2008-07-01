@@ -61,3 +61,15 @@ img.va {
 	font-size: 15px;
 	display: inline;
 }
+
+.comment {
+	padding: 5px;
+	margin-top: 5px;
+	border-bottom: 1px solid #999;
+}
+
+.info {
+	background: #F3FFE5;
+	padding: 3 px;
+	color: #333;
+}
