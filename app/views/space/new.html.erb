@@ -1,8 +1,10 @@
 <h1>Create a new space</h1>
 
+<fieldset>
 <% form_for :space, @space do |f| %>
 	Name: <%= f.text_field :name %><br/>
 	Alias: <%= f.text_field :alias %><br/>
 	Description: <br/><%= f.text_area :description, :rows => 5 %><br/>
 	<%= submit_tag 'Create' %>
 <% end %>
+</fieldset>

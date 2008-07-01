@@ -10,18 +10,22 @@ class SpaceController < ApplicationController
 	def view
 		@space = Space.find_by_alias(params[:id])
 	end
-	
+
 	def new
 		if request.post?
 			@space = Space.new(params[:space])
-			
+
 			if @space.save
 				flash[:success] = "Space created!"
 				redirect_to :action => :view, :id => @space.alias
-            else
+			else
 				flash[:error] = "Error saving space"
 			end
-        end
-    end
+		end
+	end
+	
+	def admin
+		@space = Space.find_by_alias(params[:id])
+	end
 
 end

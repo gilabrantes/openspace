@@ -45,7 +45,19 @@ class DiscussionController < ApplicationController
 		
 		# TODO give points to comment author
 		render :update do |page|
-			page.insert_html :top, 'sidebar', "Marked as answer"
+			page.replace_html 'message', "Marked as answer"
+			page.replace "comment_#{@comment.id}", :partial => "discussion/comment", :object => @comment
+		end
+	end
+
+	def unmark_as_answer
+		@comment = Comment.find(params[:id])
+		@comment.answer = false
+		@comment.save
+
+		render :update do |page|
+			page.replace_html "message", "Removed answer flag"
+			page.replace "comment_#{@comment.id}", :partial => "discussion/comment", :object => @comment
 		end
 	end
 

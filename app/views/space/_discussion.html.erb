@@ -1,5 +1,5 @@
-<div class="discussion_item">
+<div class="discussion_item <%= d_kind(discussion, true) %>">
 	<h1><%= d_icon(discussion) %> <%= link_to discussion.subject, :controller => "discussion", :action => "view", :id => discussion.id %></h1>
-	<em><%= discussion.user.login %>
+	<em class="lg f12"><%= discussion.user.login %>
 	 on <%= discussion.created_at.strftime("%H:%M, %Y/%m/%d")%></em>
 </div>

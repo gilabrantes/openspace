@@ -27,10 +27,9 @@ module ApplicationHelper
 			return "Question"
 		end
 	end
-
-	def owner?(discussion)
-		return true if discussion.user.id == current_user.id
-		return false
+	
+	def s_back(space)
+		return link_to("Spaces", :action => "index") + " &gt; " + link_to (@space.name, space_url(@space.alias))
 	end
 
 end

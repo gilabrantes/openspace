@@ -1,5 +1,6 @@
 <h1>Create a new discussion</h1>
 
+<fieldset>
 <% form_for :discussion, @discussion do |f| %>
 	Subject: <%= f.text_field :subject %><br/>
 	Kind: <%= f.select :kind, discussion_options %><br/>
@@ -8,3 +9,4 @@
 	
 	<%= submit_tag 'Create' %>
 <% end %>
+</fieldset>

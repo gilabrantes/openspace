@@ -10,15 +10,20 @@
 <body>
 	<div id="doc3" class="yui-t4">
 		<div id="hd">
-			<div id="menu">
-				Navigation: 
-				<% if logged_in? %>
-					<%= link_to "Spaces", :controller => "space" %>
-					<%= link_to "Logout", :controller => "account", :action => "logout" %>
-				<% else %>
-					<%= link_to "Login", :controller => "account", :action => "login" %>
-					<%= link_to "Sign-up", :controller => "account", :action => "signup" %>
-				<% end %>
+			<div class="yui-g" id="menu">
+				<div class="yui-u first">
+					Navigation: 
+					<% if logged_in? %>
+						<%= link_to "Spaces", :controller => "space" %>
+						<%= link_to "Logout", :controller => "account", :action => "logout" %>
+					<% else %>
+						<%= link_to "Login", :controller => "account", :action => "login" %>
+						<%= link_to "Sign-up", :controller => "account", :action => "signup" %>
+					<% end %>					
+				</div>
+				<div class="yui-u right">
+					<strong>Openspace / BETA</strong>
+				</div>
 			</div>			
 		</div>
 		<div id="bd">
@@ -28,6 +33,7 @@
 				</div>
 			</div>
 			<div class="yui-b" id="sidebar">
+				<div id="message"></div>
 				<%= yield :sidebar %>
 			</div>
 		</div>

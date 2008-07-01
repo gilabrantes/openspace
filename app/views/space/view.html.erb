@@ -1,4 +1,4 @@
-<h1><%= link_to "Spaces", :action => "index" %> &gt; <%= link_to @space.name, space_url(@space.alias) %> </h1>
+<h1><%= s_back(@space) %></h1>
 
 <% if @space.discussions.empty? %>
 	<div class="message">An empty space is an useless space. Create some discussions, for your own sake!</div>
@@ -7,5 +7,6 @@
 <%= render :partial => "discussion", :collection => @space.discussions %>
 
 <% content_for :sidebar do %>
-	<%= button "add.png",  "Create new discussion",{ :controller => 'discussion', :action => 'new', :id => @space.id} %>
+	<%= button "add.png",  "Create new discussion",{ :controller => 'discussion', :action => 'new', :id => @space.id} %><br />
+	<%= button "admin.png",  "Space admin",{ :action => 'admin', :id => @space.alias} %>
 <% end %>
