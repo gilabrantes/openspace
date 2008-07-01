@@ -9,17 +9,16 @@
 <body>
 	<div id="doc3" class="yui-t1">
 		<div id="hd">
-			<h1>OPENSPACE</h1>
-			
 			<div id="menu">
-				Menu: 
+				Navigation: 
 				<% if logged_in? %>
-					<%= link_to "Log-out", :controller => "account", :action => "logout" %>
+					<%= link_to "Spaces", :controller => "space" %>
+					<%= link_to "Logout", :controller => "account", :action => "logout" %>
 				<% else %>
 					<%= link_to "Login", :controller => "account", :action => "login" %>
 					<%= link_to "Sign-up", :controller => "account", :action => "signup" %>
 				<% end %>
-			</div>
+			</div>			
 		</div>
 		<div id="bd">
 			<%= yield %>

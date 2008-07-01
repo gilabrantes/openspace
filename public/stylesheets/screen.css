@@ -1,12 +1,18 @@
 body {
 	font-family: "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
 	color: #444;
+	margin: 0;
+	padding: 0;
+}
+
+#doc3 {
+	margin: 0;
 }
 
 /* body blocks */
 
-#hd {
-	margin-bottom: 2em;
+#bd, #ft {
+	padding: 20px;
 }
 
 #ft {
@@ -16,9 +22,15 @@ body {
 }
 
 #menu {
+	color: #a3d39c;
 	font-size: 12px;
 	border-bottom: 1px solid #ccc;
-	padding: 5px;
+	padding: 10px;
+	background: #00a651;
+}
+
+#menu a {
+	color: #fff;
 }
 
 /* links */
