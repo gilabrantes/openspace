@@ -1,7 +1,13 @@
 <h1><%= d_back(@discussion) %></h1>
 
-<h1><%= d_icon @discussion %> <%= @discussion.subject %></h1>
-<%= @discussion.body %>
+<div class="discussion <%= d_kind(@discussion).downcase %>">
+	<h1>
+		<%= d_icon @discussion %> 
+		<%= @discussion.subject %> 
+		<em>Posted by <%= @discussion.user.login %> <%= time_ago_in_words @discussion.created_at %> ago</em>
+	</h1>
+	<%= @discussion.body %>
+</div>
 
 <%= render :partial => "comment", :collection => @discussion.comments %>
 

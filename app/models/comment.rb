@@ -5,6 +5,6 @@ class Comment < ActiveRecord::Base
 
 	def before_validation_on_create
 		self.answer = 0
-    end
+	end
 	
 end

@@ -1,4 +1,8 @@
-<div class="comment">
-	<%= comment.body %><br/>
-	<em><%= comment.user.login %> on <%= comment.created_at.strftime("%H:%M, %Y/%m/%d")%></em>
+<div class="comment <%= "answer" if comment.answer == 1 %>">
+	<%= comment.body %>
+	<div class="info">
+		<%= comment.user.login %> on <%= comment.created_at.strftime("%H:%M, %Y/%m/%d")%>
+		
+		<%= link_to_remote("Mark as correct answer", :url => {:action => "mark_as_answer", :id => comment.id}) if (@discussion.user_id == current_user.id && comment.answer != 1) %>
+	</div>
 </div>

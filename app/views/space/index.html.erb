@@ -1,7 +1,10 @@
 <h1><%= link_to "Spaces", :controller => "space" %></h1>
 
-<%= link_to 'Create new space', :action => 'new' %><br/>
-
 <% for space in @spaces do %>
 	<%= link_to space.name, :action => "view", :id => space.alias %><br/>
+<% end %>
+
+
+<% content_for :sidebar do %>
+	<%= button("add.png", "Create new space", {:action => "new"}) %>
 <% end %>

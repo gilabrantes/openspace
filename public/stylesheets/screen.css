@@ -17,7 +17,7 @@ body {
 
 #ft {
 	margin: 20px 0;
-	font-size: 12px;
+	font-size: 11px;
 	color: #999;
 }
 
@@ -41,6 +41,20 @@ a, a:visited {
 	text-decoration: none;
 }
 
+a img {
+	border: none;
+}
+
+a.button {
+	background: #ebfcd2;
+	padding: 4px;
+	font-size: 12px;
+}
+
+a.button:hover {
+	background: #bce97a;
+}
+
 /* images */
 
 img.va {
@@ -49,6 +63,24 @@ img.va {
 
 
 /* discussions */
+
+.discussion {
+	background: #e7e7e7;
+	padding: 15px;
+	font-size: 12px;
+}
+
+.discussion h1 {
+	font-size: 16px;
+	margin: 0 0 1em 0;
+	border-bottom: 1px solid #ddd;
+}
+
+.discussion h1 em {
+	font-size: 12px;
+	font-weight: normal;
+	color: #999;
+}
 
 .discussion_item {
 	font-size: 15px;	
@@ -62,14 +94,33 @@ img.va {
 	display: inline;
 }
 
+/* comments */
+
 .comment {
+	font-size: 12px;
 	padding: 5px;
 	margin-top: 5px;
-	border-bottom: 1px solid #999;
+	background: #f6f6f6;
+	padding: 15px;
 }
 
-.info {
-	background: #F3FFE5;
-	padding: 3 px;
-	color: #333;
+.comment .info {
+	margin-top: 15px;
+	font-size: 11px;
+	padding: 5px 0 0;
+	color: #999;
+	border-top: 1px solid #ddd;
+}
+
+.answer {
+	background: #eaffe9;
+}
+
+/* help and information */
+
+.message {
+	font-size: 12px;
+	background: #bce97a;
+	padding: 5px;
+	margin-bottom: 15px;
 }
