@@ -14,10 +14,10 @@
 				<div class="yui-u first">
 					Navigation: 
 					<% if logged_in? %>
-						<%= link_to "Spaces", :controller => "space" %>
+						<%= link_to "Spaces", :controller => "space" %> / 
 						<%= link_to "Logout", :controller => "account", :action => "logout" %>
 					<% else %>
-						<%= link_to "Login", :controller => "account", :action => "login" %>
+						<%= link_to "Login", :controller => "account", :action => "login" %> / 
 						<%= link_to "Sign-up", :controller => "account", :action => "signup" %>
 					<% end %>					
 				</div>
@@ -44,7 +44,7 @@
 			</div>
 		</div>
 		<div id="ft">
-			Webreakstuff 2008
+			<strong>Webreakstuff 2008</strong> | This stuff is so beta it actually makes baby jesus cry.
 		</div>
 	</div>
 </body>
