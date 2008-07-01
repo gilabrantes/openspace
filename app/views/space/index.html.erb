@@ -1,0 +1,5 @@
+<h2>Available spaces</h2>
+
+<% for space in @spaces do %>
+	<%= link_to space.name, :action => "view", :id => space.alias %>
+<% end %>

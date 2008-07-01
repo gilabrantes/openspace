@@ -1,4 +1,4 @@
 <div class="discussion_item">
-	<h1><%= d_icon(discussion) %> <%= discussion.subject %></h1>
+	<h1><%= d_icon(discussion) %> <%= link_to discussion.subject, :controller => "discussion", :action => "view", :id => discussion.id %></h1>
 	<%= discussion.created_at.strftime("%H:%M, %D")%>
 </div>
