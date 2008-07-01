@@ -4,7 +4,7 @@
 	<h1>
 		<%= d_icon @discussion %> 
 		<%= @discussion.subject %> 
-		<em>Posted by <%= @discussion.user.login %> <%= time_ago_in_words @discussion.created_at %> ago</em>
+		<em>Posted by <%= u(@discussion.user) %> <%= time_ago_in_words @discussion.created_at %> ago</em>
 	</h1>
 	<%= @discussion.body %>
 </div>

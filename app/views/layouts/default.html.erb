@@ -35,6 +35,12 @@
 			<div class="yui-b" id="sidebar">
 				<div id="message"></div>
 				<%= yield :sidebar %>
+				
+				<% if logged_in? %>
+					<div id="userbox">
+						<%= avatar(current_user, 24) %> <%= current_user.login %>
+					</div>
+				<% end %>
 			</div>
 		</div>
 		<div id="ft">

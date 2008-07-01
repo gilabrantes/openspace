@@ -139,6 +139,13 @@ img.va {
 	margin-bottom: 15px;
 }
 
+#userbox {
+	margin: 2em 0;
+	background: #d0effb;
+	padding: 5px;
+	font-size: 12px;
+}
+
 /* forms */
 
 fieldset {
