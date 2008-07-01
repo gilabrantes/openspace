@@ -16,6 +16,17 @@ class User < ActiveRecord::Base
   validates_uniqueness_of   :login, :email, :case_sensitive => false
   before_save :encrypt_password
 
+
+	def addpoints(points_to_give)
+		self.points = self.points + points_to_give
+		save(false)
+	end
+
+	def subpoints(points_to_remove)
+		self.points = self.points - points_to_remove
+		save(false)
+	end
+
   # Authenticates a user by their login name and unencrypted password.  Returns the user or nil.
   def self.authenticate(login, password)
     u = find_by_login(login) # need to get the salt

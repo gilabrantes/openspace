@@ -77,6 +77,8 @@ img.va {
 	background: #e7e7e7;
 	padding: 15px;
 	font-size: 12px;
+	margin-bottom: 20px;
+	border-left: 10px solid #00bff3;
 }
 
 .discussion h1 {
@@ -141,7 +143,7 @@ img.va {
 
 #userbox {
 	margin: 2em 0;
-	background: #d0effb;
+	background: #f6f6f6;
 	padding: 5px;
 	font-size: 12px;
 }

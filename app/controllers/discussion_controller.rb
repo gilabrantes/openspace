@@ -43,7 +43,8 @@ class DiscussionController < ApplicationController
 		@comment.answer = true
 		@comment.save
 		
-		# TODO give points to comment author
+		current_user.addpoints(4) # gives 4 points
+
 		render :update do |page|
 			page.replace_html 'message', "Marked as answer"
 			page.replace "comment_#{@comment.id}", :partial => "discussion/comment", :object => @comment
@@ -54,6 +55,8 @@ class DiscussionController < ApplicationController
 		@comment = Comment.find(params[:id])
 		@comment.answer = false
 		@comment.save
+
+		current_user.subpoints(4) # removes 4 points
 
 		render :update do |page|
 			page.replace_html "message", "Removed answer flag"

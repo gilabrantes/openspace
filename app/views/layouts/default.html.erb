@@ -38,7 +38,7 @@
 				
 				<% if logged_in? %>
 					<div id="userbox">
-						<%= avatar(current_user, 24) %> <%= current_user.login %>
+						<%= avatar(current_user, 24) %> <%= u(current_user, false) %>
 					</div>
 				<% end %>
 			</div>

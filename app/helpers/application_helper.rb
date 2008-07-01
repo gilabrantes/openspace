@@ -4,7 +4,7 @@ module ApplicationHelper
 
 	def button(icon, text, url)
 		image = image_tag("icons/" + icon, :class => "va") if !icon.nil?
-		return link_to image + " " + text, url, :class => "button"
+		return link_to(image + " " + text, url, :class => "button")
 	end
 
 	def d_icon(discussion)
@@ -30,22 +30,27 @@ module ApplicationHelper
 	end
 	
 	def s_back(space)
-		return link_to("Spaces", :action => "index") + " &gt; " + link_to (@space.name, space_url(@space.alias))
+		return link_to("Spaces", :action => "index") + " &gt; " + link_to(@space.name, space_url(@space.alias))
 	end
 	
 	# shows user information
 	# avatar + username 
-	# TODO link this to a user page
 	def u(user, show_avatar = true, size = 16)
-		if show_avatar
-			return avatar(user, size) + " #{user.login}"
+		if !user.nickname.nil?
+			display_name = user.nickname
 		else
-			return user.login
+			display_name = user.login
+		end
+		
+		if show_avatar
+			return avatar(user, size) + " <span title='#{display_name} (#{user.points})'>#{display_name}</span>"
+		else
+			return "<span title='#{display_name} (#{user.points})'>#{display_name}</span>"
 		end
 	end
 	
 	def avatar(user, size = 64)
-    return image_tag "http://gravatar.com/avatar/#{MD5::md5(user.email)}.jpg?s=#{size}", :class => "va"
+    return image_tag("http://gravatar.com/avatar/#{MD5::md5(user.email)}.jpg?s=#{size}", :class => "va")
   end
 
 end
