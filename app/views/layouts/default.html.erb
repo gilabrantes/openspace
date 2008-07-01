@@ -15,6 +15,7 @@
 					Navigation: 
 					<% if logged_in? %>
 						<%= link_to "Spaces", :controller => "space" %> / 
+						<%= link_to "Preferences", :controller => "account", :action => "preferences" %> /
 						<%= link_to "Logout", :controller => "account", :action => "logout" %>
 					<% else %>
 						<%= link_to "Login", :controller => "account", :action => "login" %> / 
