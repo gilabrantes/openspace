@@ -4,7 +4,7 @@ class SpaceController < ApplicationController
 	before_filter :login_required
 
 	def index
-		@spaces = Space.find(:all)
+		@spaces = Space.find(:all, :conditions => ["parent_id is NULL"])
 	end
 
 	def view

@@ -2,6 +2,8 @@
 module ApplicationHelper
 	require 'md5'
 
+	$KINDS = {0 => {false => "Discussion", true => "discussion"}, 1 => {false => "Question", true => "question"}}
+
 	def icon(name)
 		return image_tag("icons/#{name}.png", :class => "va")
 	end
@@ -22,19 +24,17 @@ module ApplicationHelper
 	def d_back(discussion)
 		out = link_to("Spaces", :controller => "space") + " &gt; " + link_to(discussion.space.name, space_url(:id => discussion.space.alias)) + " &gt; " + link_to(discussion.subject, discussion_url(:id => discussion.id))
 	end
-	
-	def d_kind(discussion, downcase = false)
-		if discussion.kind == 0
-			return "discussion" if downcase
-			return "Discussion"
-		else
-			return "question" if downcase
-			return "Question"
-		end
+
+	def d_kind(discussion, d = false)
+		return $KINDS[discussion.kind][d]
 	end
 	
 	def s_back(space)
-		return link_to("Spaces", :action => "index") + " &gt; " + link_to(@space.name, space_url(@space.alias))
+		if space.parent.nil?
+			return link_to("Spaces", :action => "index") + " &gt; " + link_to(@space.name, space_url(@space.alias))
+		else
+			return link_to("Spaces", :action => "index") + " &gt; ... &gt; " + link_to(@space.parent.name, space_url(@space.parent.alias)) + " &gt; " + link_to(@space.name, space_url(@space.alias))
+		end
 	end
 	
 	# shows user information

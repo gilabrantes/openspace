@@ -4,6 +4,7 @@
 <% form_for :space, @space do |f| %>
 	Name: <%= f.text_field :name %><br/>
 	Alias: <%= f.text_field :alias %><br/>
+	Parent space: <%= select("space", "parent_id", Space.find(:all).collect {|p| [ p.name, p.id ] }, { :include_blank => true }) %><br />
 	Description: <br/><%= f.text_area :description, :rows => 5 %><br/>
 	<%= submit_tag 'Create' %>
 <% end %>

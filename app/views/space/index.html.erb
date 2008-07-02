@@ -1,11 +1,6 @@
 <h1><%= link_to "Spaces", :controller => "space" %></h1>
 
-<% for space in @spaces do %>
-	<div class="space_item">
-		<%= icon("folder") %> <%= link_to space.name, :action => "view", :id => space.alias %>
-	</div>
-<% end %>
-
+<%= render :partial => "space", :collection => @spaces %>
 
 <% content_for :sidebar do %>
 	<%= button("add.png", "Create new space", {:action => "new"}) %>
