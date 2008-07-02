@@ -30,7 +30,7 @@ ActionController::Routing::Routes.draw do |map|
   #     admin.resources :products
   #   end
 
-	map.connect '/feed', :controller => "activity", :action => "feed", :format => "xml"
+	map.feed 'feed', :controller => "activity", :action => "feed", :format => "xml"
 	map.space 'space/view/:id', :controller => "space", :action => "view"
 	map.discussion 'discussion/view/:id', :controller => "discussion", :action => "view"
 
