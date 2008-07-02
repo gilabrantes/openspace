@@ -1,0 +1,20 @@
+/|\
+\|/ Openspace
+-------------
+
+An open collaboration environment for startups and enterprises
+By Webreakstuff, a design and development company
+
+
+TODO:
+-----
+
+* Move spaces
+* Move discussions between spaces
+* Create wiki-like pages
+* Update user preferences
+* Update space preferences
+* Recursively show space backlinks when there are subspaces
+* Activity feed
+* Global and per-space RSS feeds
+* User list
