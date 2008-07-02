@@ -12,8 +12,10 @@
 <%= render :partial => "comment", :collection => @discussion.comments %>
 
 <h2>Your response:</h2>
+<fieldset>
 <% form_for :comment, @comment, :url => '/discussion/comment/' do |f| %>
 	<%= f.hidden_field :discussion_id, :value => @discussion.id %>
 	<%= f.text_area :body, :rows => 5 %><br/>
 	<%= submit_tag 'Add comment' %>
 <% end %>
+</fieldset>

@@ -4,6 +4,15 @@ module ApplicationHelper
 
 	$KINDS = {0 => {false => "Discussion", true => "discussion"}, 1 => {false => "Question", true => "question"}}
 
+	def activity(a)		
+		case a.reference.class.to_s
+			when "Comment"
+				return link_to a.text, discussion_url(a.reference.discussion)
+			when "Discussion"
+				return link_to a.text, discussion_url(a.reference)
+		end
+	end
+
 	def icon(name)
 		return image_tag("icons/#{name}.png", :class => "va")
 	end

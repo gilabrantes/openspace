@@ -145,6 +145,15 @@ img.va {
 .answer {	border-left: 5px solid #00a651; background: #ecf9d9; }
 .helpful { border-left: 5px solid #fff000; }
 
+/* activity */
+
+.activity_item {
+	font-size: 15px;	
+	padding: 5px;
+	margin-bottom: 5px;
+	border-bottom: 1px solid #ddd;
+}
+
 /* help and information */
 
 #message {
@@ -173,4 +182,14 @@ fieldset {
 	border: none;
 	padding: 15px;
 	background: #f6f6f6;
+}
+
+textarea {
+	width: 95%;
+	height: 60px;
+	border: 1px solid #ddd;
+	padding: 10px;
+	font-family: "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
+	font-size: 13px;
+	color: #555;
 }

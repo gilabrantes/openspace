@@ -3,6 +3,7 @@ class Discussion < ActiveRecord::Base
 	belongs_to :space
 	belongs_to :user
 	has_many :comments
+	has_one :activity, :as => :reference
 
 	validates_presence_of :subject, :body, :kind, :space_id, :user_id
 
@@ -16,6 +17,12 @@ class Discussion < ActiveRecord::Base
 	def before_validation_on_create
 		self.status = 1
 		self.answered = 0
+	end
+
+	def after_create
+		activity = Activity.create(:user_id => self.user_id, :text => "New discussion - #{self.subject}")
+		activity.reference = self
+		activity.save
 	end
 
 end
