@@ -2,7 +2,7 @@
 
 <% for a in @activities do %>
 	<div class="activity_item">
-		<%= icon(a.reference.class) %> <%= activity(a) %> 
+		<%= icon(a.reference.class.downcase) %> <%= activity(a) %> 
 		<span class="f12 lg"><%= u(a.reference.user) %></span>
 	</div>
 <% end %>
