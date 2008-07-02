@@ -15,8 +15,14 @@ TODO:
 * Update user preferences
 * Update space preferences
 * Recursively show space backlinks when there are subspaces
-* Activity feed
-* Global and per-space RSS feeds
+* Per-space RSS feeds
 * User list
 * Textilize or some other way to have better formatting on discussions
 * Improve test coverage
+
+
+COMPLETED:
+----------
+
+* Activity feed
+* Global RSS feed
