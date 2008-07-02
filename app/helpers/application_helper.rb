@@ -2,6 +2,10 @@
 module ApplicationHelper
 	require 'md5'
 
+	def icon(name)
+		return image_tag("icons/#{name}.png", :class => "va")
+	end
+
 	def button(icon, text, url)
 		image = image_tag("icons/" + icon, :class => "va") if !icon.nil?
 		return link_to(image + " " + text, url, :class => "button")

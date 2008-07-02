@@ -1,7 +1,9 @@
 <h1><%= link_to "Spaces", :controller => "space" %></h1>
 
 <% for space in @spaces do %>
-	<%= link_to space.name, :action => "view", :id => space.alias %><br/>
+	<div class="space_item">
+		<%= icon("folder") %> <%= link_to space.name, :action => "view", :id => space.alias %>
+	</div>
 <% end %>
 
 
