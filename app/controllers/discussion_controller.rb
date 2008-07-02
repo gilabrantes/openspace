@@ -43,6 +43,9 @@ class DiscussionController < ApplicationController
 		@comment.answer = true
 		@comment.save
 		
+		@comment.discussion.answered = true
+		@comment.discussion.save
+		
 		current_user.addpoints(4) # gives 4 points
 
 		render :update do |page|

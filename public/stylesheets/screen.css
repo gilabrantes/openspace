@@ -119,6 +119,10 @@ img.va {
 	display: inline;
 }
 
+.answered {
+	background: #ebfcd2;
+}
+
 /* comments */
 
 .comment {
