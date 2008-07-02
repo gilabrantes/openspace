@@ -1,5 +1,5 @@
 module DiscussionHelper
 	def discussion_options
-		[['Discussion',1],['Question',2]]
-    end
+		[['Discussion',0],['Question',1]]
+	end
 end

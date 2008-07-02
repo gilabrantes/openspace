@@ -5,8 +5,8 @@ class CreateDiscussions < ActiveRecord::Migration
 			t.text :body
 			
 			# kind
-			# 1 - discussion
-			# 2 - question
+			# 0 - discussion
+			# 1 - question
 			t.column :kind, :integer, :size => 1
 			
 			# status
