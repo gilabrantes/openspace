@@ -9,16 +9,15 @@ By Webreakstuff, a design and development company
 TODO:
 -----
 
-* Move spaces
 * Move discussions between spaces
 * Create wiki-like pages
 * Update user preferences
-* Update space preferences
 * Recursively show space backlinks when there are subspaces
 * Per-space RSS feeds
 * User list
 * Textilize or some other way to have better formatting on discussions
 * Improve test coverage
+* Prettify forms
 
 
 COMPLETED:
@@ -26,3 +25,5 @@ COMPLETED:
 
 * Activity feed
 * Global RSS feed
+* Move spaces
+* Update space preferences

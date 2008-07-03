@@ -7,9 +7,9 @@ module ApplicationHelper
 	def activity(a)		
 		case a.reference.class.to_s
 			when "Comment"
-				return link_to a.text, discussion_url(a.reference.discussion)
+				return link_to(a.text, discussion_url(a.reference.discussion))
 			when "Discussion"
-				return link_to a.text, discussion_url(a.reference)
+				return link_to(a.text, discussion_url(a.reference))
 		end
 	end
 

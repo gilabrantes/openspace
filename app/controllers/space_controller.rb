@@ -26,6 +26,15 @@ class SpaceController < ApplicationController
 	
 	def admin
 		@space = Space.find_by_alias(params[:id])
+		
+		if request.post?
+			if @space.update_attributes(params[:space])
+				flash[:success] = "Space updated"
+				redirect_to :action => "admin", :id => @space.alias
+			else
+				flash[:error] = "Error updating this space"
+			end
+		end
 	end
 
 end
