@@ -1,5 +1,6 @@
 <% content_for :sidebar do %>
 	<%= button "add.png",  "Create new discussion",{ :controller => 'discussion', :action => 'new', :id => @space.id} %><br />
+	<%= button "add.png",  "Create new space",{ :controller => 'space', :action => 'new', :id => @space.id} %><br />
 	<%= button "admin.png",  "Space admin",{ :action => 'admin', :id => @space.alias} %>
 <% end %>
 
