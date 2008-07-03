@@ -16,7 +16,7 @@ TODO:
 * Recursively show space backlinks when there are subspaces
 * Per-space RSS feeds
 * User list
-* Textilize or some other way to have better formatting on discussions
+* Add Textile or some other way to have better formatting on discussions
 * Improve test coverage
 * Prettify forms
 
