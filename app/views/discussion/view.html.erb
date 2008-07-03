@@ -6,7 +6,7 @@
 		<%= @discussion.subject %> 
 		<em>Posted by <%= u(@discussion.user) %> <%= time_ago_in_words @discussion.created_at %> ago</em>
 	</h1>
-	<%= @discussion.body %>
+	<%= cloth(@discussion.body) %>
 </div>
 
 <%= render :partial => "comment", :collection => @discussion.comments %>
