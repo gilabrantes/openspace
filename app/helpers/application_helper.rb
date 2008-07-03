@@ -4,6 +4,10 @@ module ApplicationHelper
 
 	$KINDS = {0 => {false => "Discussion", true => "discussion"}, 1 => {false => "Question", true => "question"}}
 
+	def cloth(text)
+		return RedCloth.new(text).to_html
+	end
+
 	def activity(a)		
 		case a.reference.class.to_s
 			when "Comment"

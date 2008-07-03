@@ -1,5 +1,5 @@
 <div id="comment_<%= comment.id %>" class="comment <%= "answer" if comment.answer == 1 %>">
-	<%= comment.body %>
+	<%= cloth(comment.body) %>
 	<div class="info">
 		<%= u(comment.user) %> on <%= comment.created_at.strftime("%H:%M, %Y/%m/%d")%> <%= "last edited on: #{comment.updated_at.strftime("%H:%M, %Y/%m/%d")}" unless comment.created_at == comment.updated_at %>
 		<% if comment.user_id == current_user.id %>

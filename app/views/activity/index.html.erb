@@ -3,6 +3,9 @@
 <% for a in @activities do %>
 	<div class="activity_item">
 		<%= icon(a.reference.class.to_s.downcase) %> <%= activity(a) %> 
-		<span class="f12 lg"><%= u(a.reference.user) %></span>
+		<span class="f12 lg">
+			<%= u(a.reference.user) %>,
+			<%= time_ago_in_words(a.created_at) %> ago
+		</span>
 	</div>
 <% end %>

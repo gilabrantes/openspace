@@ -1,0 +1,91 @@
+--- !ruby/object:Gem::Specification 
+name: RedCloth
+version: !ruby/object:Gem::Version 
+  version: "3.301"
+platform: ruby
+authors: 
+- Jason Garber
+autorequire: 
+bindir: bin
+cert_chain: []
+
+date: 2008-04-24 00:00:00 +01:00
+default_executable: redcloth
+dependencies: []
+
+description: a fast library for formatting Textile as HTML
+email: redcloth-upwards@rubyforge.org
+executables: 
+- redcloth
+extensions: 
+- ext/redcloth_scan/extconf.rb
+extra_rdoc_files: 
+- README
+- CHANGELOG
+- COPYING
+files: 
+- COPYING
+- README
+- Rakefile
+- bin/redcloth
+- test/table.yml
+- test/helper.rb
+- test/test_parser.rb
+- test/html.yml
+- test/textism.yml
+- test/images.yml
+- test/extra_whitespace.yml
+- test/threshold.yml
+- test/poignant.yml
+- test/test_formatters.rb
+- test/basic.yml
+- test/lists.yml
+- test/links.yml
+- test/instiki.yml
+- test/definitions.yml
+- test/code.yml
+- lib/redcloth.rb
+- lib/formatters
+- lib/formatters/latex.rb
+- lib/formatters/html.rb
+- lib/redcloth_scan.so
+- lib/version.rb
+- extras/ragel_profiler.rb
+- extras/mingw-rbconfig.rb
+- ext/redcloth_scan/redcloth.h
+- ext/redcloth_scan/redcloth_inline.c
+- ext/redcloth_scan/redcloth_scan.c
+- ext/redcloth_scan/extconf.rb
+- ext/redcloth_scan/redcloth_scan.rl
+- ext/redcloth_scan/redcloth_inline.rl
+- ext/redcloth_scan/redcloth_common.rl
+- CHANGELOG
+has_rdoc: true
+homepage: http://code.whytheluckystiff.net/redcloth/
+post_install_message: 
+rdoc_options: []
+
+require_paths: 
+- bin
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      version: "0"
+  version: 
+required_rubygems_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      version: "0"
+  version: 
+requirements: []
+
+rubyforge_project: 
+rubygems_version: 1.1.1
+signing_key: 
+specification_version: 2
+summary: a fast library for formatting Textile as HTML
+test_files: []
+
