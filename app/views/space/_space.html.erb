@@ -4,4 +4,7 @@
 		<%= space.discussions.count %> discussions / 
 		<%= space.children.size %> sub-space(s)
 	</span>
+	<span class="gl f11">
+		<%= link_to "Admin", :action => "admin", :id => space.alias %>
+	</span>	
 </div>

@@ -30,6 +30,7 @@ body {
 }
 
 #menu a {
+	background: #3cb878;
 	color: #fff;
 	padding: 2px;
 }
@@ -42,6 +43,7 @@ body {
 
 .lg {	color: #999; }
 
+.f11 { font-size: 11px; }
 .f12 { font-size: 12px; }
 
 .right { text-align: right; }
@@ -52,6 +54,10 @@ a, a:visited {
 	color: #00a651;
 	font-weight: bold;
 	text-decoration: none;
+}
+
+a:hover {
+	color: #197b30;
 }
 
 a img {
@@ -67,6 +73,14 @@ a.button {
 
 a.button:hover {
 	background: #bce97a;
+}
+
+span.gl a {
+	color: #999;
+}
+
+span.gl a:hover {
+	color: #555;
 }
 
 /* images */
