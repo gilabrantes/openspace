@@ -24,17 +24,33 @@ class DiscussionController < ApplicationController
 
 	def comment
 		if request.post?
-			@comment = Comment.new(params[:comment])
-			current_user.comments << @comment
-
+			unless params[:id]
+				#create a new comment
+				@comment = Comment.new(params[:comment])
+				@comment.user = current_user
+			else
+				#edit a comment
+				@comment = Comment.find_by_id_and_user_id params[:id], current_user.id
+				@comment.attributes= params[:comment]
+			end
+			
 			if @comment.save
-				flash[:success] = "Comment created!"
+				flash[:success] = "Comment saved!"
 				redirect_to :action => :view, :id => @comment.discussion.id
 			else
 				flash[:error] = "Error saving comment"
 			end
 		end
 	end
+	
+	def edit
+		@comment = Comment.find_by_id_and_user_id params[:id],current_user.id
+		raise ActiveRecord::RecordNotFound unless @comment
+		@discussion = @comment.discussion
+		render :update do |page|
+			page.replace_html "comment_#{@comment.id}", :partial => 'comment_form'
+        end
+    end
 	
 	# marks a given comment as answer
 	# TODO move to model?
@@ -46,7 +62,7 @@ class DiscussionController < ApplicationController
 		@comment.discussion.answered = true
 		@comment.discussion.save
 		
-		current_user.addpoints(4) # gives 4 points
+		@comment.user.addpoints(4) # gives 4 points
 
 		render :update do |page|
 			page.replace_html 'message', "Marked as answer"

@@ -1,9 +1,11 @@
 <div id="comment_<%= comment.id %>" class="comment <%= "answer" if comment.answer == 1 %>">
 	<%= comment.body %>
 	<div class="info">
-		<%= u(comment.user) %> on <%= comment.created_at.strftime("%H:%M, %Y/%m/%d")%>
-		
-		<% if comment.discussion.user_id == current_user.id %>
+		<%= u(comment.user) %> on <%= comment.created_at.strftime("%H:%M, %Y/%m/%d")%> <%= "last edited on: #{comment.updated_at.strftime("%H:%M, %Y/%m/%d")}" unless comment.created_at == comment.updated_at %>
+		<% if comment.user_id == current_user.id %>
+			<%= link_to_remote "edit", :url => {:action => 'edit', :id => comment.id} %>
+		<% end %>
+		<% if comment.discussion.user_id == current_user.id and comment.discussion.kind == 1 %>
 			<% if comment.answer != 1 %>
 				<%= link_to_remote("Mark as correct answer", :url => {:action => "mark_as_answer", :id => comment.id}) %>
 			<% else %>
