@@ -4,7 +4,7 @@
 	<div class="activity_item">
 		<%= icon(a.reference.class.to_s.downcase) %> <%= activity(a) %> 
 		<span class="f12 lg">
-			<%= u(a.reference.user) %>,
+			<%= u(a.user) %>,
 			<%= time_ago_in_words(a.created_at) %> ago
 		</span>
 	</div>

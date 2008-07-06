@@ -77,6 +77,8 @@ a.button:hover {
 
 span.gl a {
 	color: #999;
+	background: #eee;
+	padding: 2px;
 }
 
 span.gl a:hover {

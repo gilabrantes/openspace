@@ -1,5 +1,5 @@
 <div class="space_item">
-	<%= icon("folder") %> <%= link_to space.name, :action => "view", :id => space.alias %> 
+	<%= icon("space") %> <%= link_to space.name, :action => "view", :id => space.alias %> 
 	<span class="lg f12">
 		<%= space.discussions.count %> discussions / 
 		<%= space.children.size %> sub-space(s)

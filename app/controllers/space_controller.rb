@@ -16,6 +16,7 @@ class SpaceController < ApplicationController
 			@space = Space.new(params[:space])
 
 			if @space.save
+				create_activity("New space created - #{@space.name}", @space)
 				flash[:success] = "Space created!"
 				redirect_to :action => :view, :id => @space.alias
 			else

@@ -14,6 +14,8 @@ module ApplicationHelper
 				return link_to(a.text, discussion_url(a.reference.discussion))
 			when "Discussion"
 				return link_to(a.text, discussion_url(a.reference))
+			when "Space"
+				return link_to(a.text, space_url(a.reference.alias))
 		end
 	end
 
