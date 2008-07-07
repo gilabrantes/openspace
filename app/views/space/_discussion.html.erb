@@ -1,5 +1,6 @@
 <div class="discussion_item <%= "answered" if discussion.answered == 1 %>">
 	<h1><%= d_icon(discussion) %> <%= link_to discussion.subject, :controller => "discussion", :action => "view", :id => discussion.id %></h1>
 	<em class="lg f12"><%= u discussion.user, false %>
-	 on <%= discussion.created_at.strftime("%H:%M, %Y/%m/%d")%></em>
+	 on <%= discussion.created_at.strftime("%H:%M, %Y/%m/%d")%> <%= "last commented on #{discussion.comments.first.updated_at.strftime("%H:%M, %Y/%m/%d")}"  if discussion.comments.any? %>
+	</em>
 </div>
