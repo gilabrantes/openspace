@@ -9,9 +9,7 @@ class Comment < ActiveRecord::Base
 	end
 	
 	def after_create
-		activity = Activity.create(:user_id => self.user_id, :text => "New comment on #{self.discussion.subject}")
-		activity.reference = self
-		activity.save
+		Activity.create(:user_id => self.user_id, :text => "comment_created", :reference => self)
 	end
 	
 end

@@ -4,11 +4,11 @@ class ActivityController < ApplicationController
 	before_filter :login_required, :except => "feed"
 	
 	def index
-		@activities = Activity.find(:all, :order => "created_at DESC")
+		@activities = Activity.find(:all, :order => "created_at DESC", :limit => "40")
 	end
 
 	def feed
-		@activities = Activity.find(:all, :order => "created_at DESC")
+		@activities = Activity.find(:all, :order => "created_at DESC", :limit => "20")
 	end
 		
 end

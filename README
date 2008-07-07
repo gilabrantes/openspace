@@ -11,7 +11,6 @@ TODO:
 
 * Move discussions between spaces
 * Update user preferences
-* Add more data to the activity feeds
 * Recursively show space backlinks when there are subspaces
 * Create wiki-like pages
 * Prettify forms
@@ -28,3 +27,4 @@ COMPLETED:
 * Move spaces
 * Update space preferences
 * Add Textile or some other way to have better formatting on discussions
+* Add more data to the activity feeds

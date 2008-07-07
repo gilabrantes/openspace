@@ -14,8 +14,6 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
 
 	def create_activity(text, reference)
-		activity = Activity.create(:user_id => current_user.id, :text => text)
-		activity.reference = reference
-		activity.save
+		Activity.create(:user_id => current_user.id, :text => text, :reference => reference)
 	end
 end

@@ -20,9 +20,7 @@ class Discussion < ActiveRecord::Base
 	end
 
 	def after_create
-		activity = Activity.create(:user_id => self.user_id, :text => "New discussion - #{self.subject}")
-		activity.reference = self
-		activity.save
+		Activity.create(:user_id => self.user_id, :text => "discussion_created", :reference => self)
 	end
 
 end
