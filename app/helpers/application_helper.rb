@@ -16,7 +16,7 @@ module ApplicationHelper
 				return link_to("Discussion added, \'#{a.reference.subject}\'", discussion_url(a.reference))
 			when "comment_created"
 				return link_to("Comment added to \'#{a.reference.discussion.subject}\'", discussion_url(a.reference.discussion))
-			end
+		end
 	end
 
 	def icon(name)
