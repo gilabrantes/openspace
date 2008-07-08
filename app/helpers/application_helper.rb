@@ -11,11 +11,11 @@ module ApplicationHelper
 	def activity(a)
 		case a.text
 			when "space_created"
-				return link_to("Space created, \'#{a.reference.name}\'", space_url(a.reference.alias))
+				return link_to(a.formatted_text, space_url(a.reference.alias))
 			when "discussion_created"
-				return link_to("Discussion added, \'#{a.reference.subject}\'", discussion_url(a.reference))
+				return link_to(a.formatted_text, discussion_url(a.reference))
 			when "comment_created"
-				return link_to("Comment added to \'#{a.reference.discussion.subject}\'", discussion_url(a.reference.discussion))
+				return link_to(a.formatted_text, discussion_url(a.reference.discussion))
 		end
 	end
 

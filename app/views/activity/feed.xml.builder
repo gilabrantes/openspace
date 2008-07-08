@@ -7,9 +7,9 @@ xml.rss :version => "2.0" do
 
     for activity in @activities
       xml.item do
-        xml.title activity.text
+        xml.title activity.formatted_text
         xml.pubDate activity.created_at.to_s(:rfc822)
-        xml.description activity.reference.body
+        xml.description activity.formatted_body
 
 				case activity.reference.class.to_s
 					when "Discussion"
