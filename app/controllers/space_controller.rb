@@ -8,7 +8,7 @@ class SpaceController < ApplicationController
 	end
 
 	def view
-		@space = Space.find_by_alias(params[:id])
+		@space = Space.find_by_alias(params[:id] , :include =>{:discussions => :comments}, :order => "comments.updated_at DESC")
 	end
 
 	def new
