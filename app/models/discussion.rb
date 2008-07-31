@@ -4,6 +4,7 @@ class Discussion < ActiveRecord::Base
 	belongs_to :user
 	has_many :comments
 	has_one :activity, :as => :reference
+	#has_many :tags, :as => :taggable
 
 	validates_presence_of :subject, :body, :kind, :space_id, :user_id
 

@@ -18,7 +18,6 @@
 					<% if logged_in? %>
 						<%= link_to "Spaces", :controller => "space" %> / 
 						<%= link_to "Activity", :controller => "activity" %> / 
-						<%= link_to "Preferences", :controller => "account", :action => "preferences" %> /
 						<%= link_to "Logout", :controller => "account", :action => "logout" %>
 					<% else %>
 						<%= link_to "Login", :controller => "account", :action => "login" %> / 
@@ -41,8 +40,9 @@
 				<%= yield :sidebar %>
 				
 				<% if logged_in? %>
-					<div id="userbox">
+					<div id="userbox" class="f11">
 						<%= avatar(current_user, 24) %> <%= u(current_user, false) %>
+						(<%= link_to "Preferences", :controller => "account", :action => "preferences" %>) 
 					</div>
 				<% end %>
 			</div>

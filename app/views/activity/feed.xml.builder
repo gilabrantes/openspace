@@ -17,7 +17,7 @@ xml.rss :version => "2.0" do
 						xml.guid discussion_url(activity.reference.id)
 					when "Comment"
 						xml.link discussion_url(activity.reference.discussion.id)
-						xml.guid discussion_url(activity.reference.id) + "#comment_#{activity.reference.id}"
+						xml.guid discussion_url(activity.reference.discussion.id) + "#comment_#{activity.reference.id}"
 					when "Space"
 						xml.link space_url(activity.reference.alias)
 						xml.guid space_url(activity.reference.alias)

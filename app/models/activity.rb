@@ -15,6 +15,7 @@ class Activity < ActiveRecord::Base
 		end
 	end
 	
+	# returns a formatted body for an activity item
 	def formatted_body
 		case self.text
 			when "space_created"
