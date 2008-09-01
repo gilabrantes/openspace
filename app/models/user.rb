@@ -16,6 +16,9 @@ class User < ActiveRecord::Base
   validates_uniqueness_of   :login, :email, :case_sensitive => false
   before_save :encrypt_password
 
+	def display
+		self.login unless !self.nickname.nil?
+	end
 
 	def addpoints(points_to_give)
 		self.points = self.points + points_to_give

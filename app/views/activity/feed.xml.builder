@@ -10,7 +10,8 @@ xml.rss :version => "2.0" do
         xml.title activity.formatted_text
         xml.pubDate activity.created_at.to_s(:rfc822)
         xml.description activity.formatted_body
-
+				xml.author "#{activity.user.login} (#{activity.user.email})"
+				
 				case activity.reference.class.to_s
 					when "Discussion"
 						xml.link discussion_url(activity.reference.id)
