@@ -29,7 +29,7 @@ class AccountController < ApplicationController
 
 	def signup
 		@user = User.new(params[:user])
-		return unless request.post?
+		return unless request.post? and OPENSPACE_CONFIG['allowsignup']
 		@user.save!
 		self.current_user = @user
 		redirect_back_or_default(:controller => '/space', :action => 'index')
