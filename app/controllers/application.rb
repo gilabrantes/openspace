@@ -16,4 +16,15 @@ class ApplicationController < ActionController::Base
 	def create_activity(text, reference)
 		Activity.create(:user_id => current_user.id, :text => text, :reference => reference)
 	end
+	
+	# hash-based authentication
+	def hash_required
+		@user = User.find_by_login(params[:u])
+		if @user and @user.hash == params[:hash]
+			return true
+		end
+
+		# hash authentication failed, don't render feed
+		render :nothing => true, :status => 403 and return
+	end
 end

@@ -16,6 +16,11 @@ class User < ActiveRecord::Base
   validates_uniqueness_of   :login, :email, :case_sensitive => false
   before_save :encrypt_password
 
+	# authenticates a user based on a hash
+	def hash
+		Digest::SHA1.hexdigest("OS_#{OPENSPACE_CONFIG['salt']}_#{self.login}")
+	end
+
 	def display
 		self.login unless !self.nickname.nil?
 	end

@@ -1,6 +1,5 @@
-/|\
+/|\ 
 \|/ Openspace
--------------
 
 An open collaboration environment for startups and enterprises
 By Webreakstuff, a design and development company
@@ -18,7 +17,6 @@ h1. Running
 
 h1. Todo
 
-* Authenticated feeds
 * Administration screens
 * Move discussions between spaces
 * Update user preferences
@@ -37,3 +35,4 @@ h1. Completed features
 * Update space preferences
 * Add Textile or some other way to have better formatting on discussions
 * Add more data to the activity feeds
+* Authenticated feeds
