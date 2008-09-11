@@ -4,11 +4,22 @@
 
 An open collaboration environment for startups and enterprises
 By Webreakstuff, a design and development company
+http://webreakstuff.com
 
+!http://webreakstuff.com/img/webreakstuff_logo.gif!
 
-TODO:
------
+h1. Running
 
+* git clone git://github.com/fredoliveira/openspace.git
+* edit database.yml
+* edit openspace.yml
+* rake db:migrate
+* script/server
+
+h1. Todo
+
+* Authenticated feeds
+* Administration screens
 * Move discussions between spaces
 * Update user preferences
 * Recursively show space backlinks when there are subspaces
@@ -18,9 +29,7 @@ TODO:
 * Per-space RSS feeds
 * User list
 
-
-COMPLETED:
-----------
+h1. Completed features
 
 * Activity feed
 * Global RSS feed
