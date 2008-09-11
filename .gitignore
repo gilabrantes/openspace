@@ -3,6 +3,7 @@ log/*.log
 tmp/**/*
 config/database.yml
 config/deploy.rb
+config/openspace.yml
 db/*.sqlite3
 nbproject
 nbproject/*

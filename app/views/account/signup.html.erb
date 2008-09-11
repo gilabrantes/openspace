@@ -1,16 +1,23 @@
-<%= error_messages_for :user %>
-<% form_for :user do |f| -%>
-<p><label for="login">Login</label><br/>
-<%= f.text_field :login %></p>
+<% if OPENSPACE_CONFIG['allowsignup'] %>
+	<%= error_messages_for :user %>
+	<% form_for :user do |f| -%>
+	<p><label for="login">Login</label><br/>
+	<%= f.text_field :login %></p>
+	
+	<p><label for="email">Email</label><br/>
+	<%= f.text_field :email %></p>
+	
+	<p><label for="password">Password</label><br/>
+	<%= f.password_field :password %></p>
+	
+	<p><label for="password_confirmation">Confirm Password</label><br/>
+	<%= f.password_field :password_confirmation %></p>
+	
+	<p><%= submit_tag 'Sign up' %></p>
+	<% end -%>
+<% else %>
 
-<p><label for="email">Email</label><br/>
-<%= f.text_field :email %></p>
-
-<p><label for="password">Password</label><br/>
-<%= f.password_field :password %></p>
-
-<p><label for="password_confirmation">Confirm Password</label><br/>
-<%= f.password_field :password_confirmation %></p>
-
-<p><%= submit_tag 'Sign up' %></p>
-<% end -%>
+	<h1>Sign-up disabled</h1>
+	<div class="message">Sign-ups are disabled at this point. Please contact the <%= mail_to OPENSPACE_CONFIG['admin'], "system administrator" %> for more information.</div>
+	
+<% end %>
