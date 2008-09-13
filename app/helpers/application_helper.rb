@@ -4,6 +4,11 @@ module ApplicationHelper
 
 	$KINDS = {0 => {false => "Discussion", true => "discussion"}, 1 => {false => "Question", true => "question"}}
 
+	# returns the top 10 scores on Openspace
+	def topusers
+		@topusers = User.find(:all, :order => "points DESC", :limit => "10")
+	end
+
 	def cloth(text)
 		return RedCloth.new(text).to_html
 	end

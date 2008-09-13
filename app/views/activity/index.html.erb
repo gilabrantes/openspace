@@ -9,3 +9,12 @@
 		</span>
 	</div>
 <% end %>
+
+<% content_for :sidebar do %>
+	<h3>Top participation</h3>
+	<ol class="f11">
+	<% for user in topusers do %>
+		<li><%= u(user) %> - <%= user.points %> points</li>
+	<% end %>
+	</ol>
+<% end %>

@@ -39,14 +39,7 @@
 			</div>
 			<div class="yui-b" id="sidebar">
 				<div id="message"></div>
-				<%= yield :sidebar %>
-				
-				<% if logged_in? %>
-					<div id="userbox" class="f11">
-						<%= avatar(current_user, 24) %> <%= u(current_user, false) %>
-						(<%= link_to "Preferences", :controller => "account", :action => "preferences" %>) 
-					</div>
-				<% end %>
+				<%= yield :sidebar %>				
 			</div>
 		</div>
 		<div id="ft">

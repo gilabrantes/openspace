@@ -27,4 +27,5 @@ class ApplicationController < ActionController::Base
 		# hash authentication failed, don't render feed
 		render :nothing => true, :status => 403 and return
 	end
+	
 end
