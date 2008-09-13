@@ -10,6 +10,7 @@ class Comment < ActiveRecord::Base
 	
 	def after_create
 		Activity.create(:user_id => self.user_id, :text => "comment_created", :reference => self)
+		User.find(self.user_id).addpoints(1) # gives the user 1 point for the reply
 	end
 	
 end

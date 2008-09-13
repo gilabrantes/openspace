@@ -58,17 +58,27 @@ class DiscussionController < ApplicationController
 		@comment = Comment.find(params[:id])
 		@comment.answer = true
 		@comment.save
-		
 		@comment.discussion.answered = true
-		@comment.discussion.save
-		
+		@comment.discussion.save		
 		@comment.user.addpoints(4) # gives 4 points
-
 		render :update do |page|
 			page.replace_html 'message', "Marked as answer"
 			page.replace "comment_#{@comment.id}", :partial => "discussion/comment", :object => @comment
 		end
 	end
+
+	# # marks a given comment as spam
+	# # TODO move to model?	
+	# def mark_as_spam
+	# 	@comment = Comment.find(params[:id])
+	# 	@comment.spam = true
+	# 	@comment.save
+	# 	@comment.user.delpoints(4)
+	# 	render :update do |page|
+	# 		page.replace_html 'message', "Marked as spam"
+	# 		page.replace "comment_#{@comment.id}", :partial => "discussion/comment", :object => @comment
+	# 	end
+	# end
 
 	def unmark_as_answer
 		@comment = Comment.find(params[:id])

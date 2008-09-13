@@ -22,6 +22,7 @@ class Discussion < ActiveRecord::Base
 
 	def after_create
 		Activity.create(:user_id => self.user_id, :text => "discussion_created", :reference => self)
+		User.find(self.user_id).addpoints(2) # gives the user 2 points for starting a topic
 	end
 
 end
