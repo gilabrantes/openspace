@@ -91,6 +91,15 @@ img.va {
 	vertical-align: middle;
 }
 
+/* lists */
+
+ol.border li {
+	padding: 5px;
+	border-bottom: 1px solid #eee;
+	background: #f6f6f6;
+	margin-bottom: 1px;
+}
+
 
 /* spaces */
 
