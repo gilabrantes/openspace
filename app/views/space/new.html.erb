@@ -4,7 +4,9 @@
 <% form_for :space, @space do |f| %>
 	Name: <%= f.text_field :name %><br/>
 	Alias: <%= f.text_field :alias %> <em class="lg f12"> - No spaces, all characters must be lower case</em><br/>
-	Parent space: <%= select("space", "parent_id", Space.find(:all).collect {|p| [ p.name, p.id ] }, { :include_blank => true }) %><br />
+	<% unless @parent_space.nil? %>
+	Parent space: <strong><%= @parent_space.name %></strong> <br />
+	<% end %>
 	Description: <br/><%= f.text_area :description, :rows => 5 %><br/>
 	<%= submit_tag 'Create' %>
 <% end %>

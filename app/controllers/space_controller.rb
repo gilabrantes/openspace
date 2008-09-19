@@ -22,6 +22,8 @@ class SpaceController < ApplicationController
 			else
 				flash[:error] = "Error saving space"
 			end
+		else
+			@parent_space = Space.find(params[:id]) unless params[:id].nil?
 		end
 	end
 	
