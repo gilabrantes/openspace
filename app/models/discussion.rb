@@ -15,14 +15,21 @@ class Discussion < ActiveRecord::Base
 		end
 	end
 
+	def before_create
+		self.answered = 0
+	end
+
 	def before_validation_on_create
 		self.status = 1
-		self.answered = 0
 	end
 
 	def after_create
 		Activity.create(:user_id => self.user_id, :text => "discussion_created", :reference => self)
 		User.find(self.user_id).addpoints(2) # gives the user 2 points for starting a topic
+	end
+	
+	def safe_update(params)
+		self.update_attribute(:body, params[:body]) unless params[:body].blank?
 	end
 
 end

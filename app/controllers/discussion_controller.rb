@@ -9,10 +9,10 @@ class DiscussionController < ApplicationController
 
 	def new
 		if request.post?
-			@discussion = Discussion.new(params[:discussion])
-			current_user.discussions << @discussion
-			# discussion.space = params[:space_id]
-
+				#create a comment
+				@discussion = Discussion.new(params[:discussion])
+				current_user.discussions << @discussion
+				# discussion.space = params[:space_id]
 			if @discussion.save
 				flash[:success] = "Discussion created!"
 				redirect_to :action => :view, :id => @discussion.id
@@ -20,6 +20,18 @@ class DiscussionController < ApplicationController
 				flash[:error] = "Error saving discussion"
 			end
 		end
+	end
+	
+	def update
+		@discussion = Discussion.find(params[:id])
+		
+		if @discussion.safe_update(params[:discussion])
+			flash[:success] = "Discussion updated!"
+			redirect_to :action => :view, :id => @discussion.id
+		else
+			flash[:error] = "Error saving discussion"
+		end
+		
 	end
 
 	def comment
@@ -44,6 +56,15 @@ class DiscussionController < ApplicationController
 	end
 	
 	def edit
+		@discussion = Discussion.find(params[:id])
+		raise ActiveRecord::RecordNotFound unless @discussion
+		render :update do |page|
+			page.replace_html "discussion_body", :partial => 'discussion_edit_form'
+		end
+		
+	end
+	
+	def edit_comment
 		@comment = Comment.find_by_id_and_user_id params[:id],current_user.id
 		raise ActiveRecord::RecordNotFound unless @comment
 		@discussion = @comment.discussion

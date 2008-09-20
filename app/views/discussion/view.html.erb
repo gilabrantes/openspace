@@ -6,8 +6,12 @@
 		<%= @discussion.subject %> 
 		<em>Posted by <%= u(@discussion.user) %> <%= time_ago_in_words @discussion.created_at %> ago</em>
 	</h1>
-	<%= cloth(@discussion.body) %>
-</div>
+	<span id="discussion_body"><%= cloth(@discussion.body) %>
+	<% if @discussion.user_id == current_user.id %>
+		<%= link_to_remote "Edit discussion", :url => {:action => 'edit', :id => @discussion.id} %>
+	<% end %>
+	</span>
+</div><strong></strong>
 
 <%= render :partial => "comment", :collection => @discussion.comments %>
 

@@ -5,7 +5,7 @@
 
 		<span class="gl">		
 		<% if comment.user_id == current_user.id %>
-			<%= link_to_remote "Edit comment", :url => {:action => 'edit', :id => comment.id} %>
+			<%= link_to_remote "Edit comment", :url => {:action => 'edit_comment', :id => comment.id} %>
 		<% end %>
 		
 		<% if comment.discussion.user_id == current_user.id and comment.discussion.kind == 1 %>

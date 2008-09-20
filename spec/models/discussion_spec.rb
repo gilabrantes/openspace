@@ -1,6 +1,9 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe Discussion do
+  
+  fixtures :users
+	
   before(:each) do
     @valid_attributes = {
 			:subject => "A test subject",
@@ -8,7 +11,8 @@ describe Discussion do
 			:kind => 0,
 			:status => 1,
 			:answered => 0, 
-			:space_id => 1
+			:space_id => 1,
+			:user => users(:jack)
     }
   end
 
@@ -44,6 +48,31 @@ describe Discussion do
 	  @discussion = Discussion.new(@valid_attributes)
 		@discussion.space_id = nil
 		@discussion.save.should be_false
+	end
+	
+	it "should only update body when edited" do
+		
+		
+		#This may well be the ugliest spec i've ever writen! :(
+		new_attributes = {:subject => "CHANGED!", :body => "CHANGED!", :kind => 99, :status => 0, :answered => 1, :space_id => -1}
+		
+	  	@discussion = Discussion.create(@valid_attributes)
+		@discussion.user = users(:jack)
+		@discussion.safe_update(new_attributes)
+		updated_attributes = @discussion.attributes
+		updated_attributes.delete("body")
+		updated_attributes.delete("updated_at")
+		updated_attributes.delete("created_at")
+		updated_attributes.delete("id")
+		updated_attributes.delete("user_id")
+		initial_attributes = @valid_attributes
+		initial_attributes.delete(:body)
+		initial_attributes.delete(:user)
+		
+		initial_attributes.each_key do |key|
+			initial_attributes[key].should eql(updated_attributes[key.to_s])
+		end
+		
 	end
 end
 
