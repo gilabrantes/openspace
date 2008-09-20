@@ -59,6 +59,7 @@ class DiscussionController < ApplicationController
 		@discussion = Discussion.find(params[:id])
 		raise ActiveRecord::RecordNotFound unless @discussion
 		render :update do |page|
+			page.hide 'response'
 			page.replace_html "discussion_body", :partial => 'discussion_edit_form'
 		end
 		
@@ -69,6 +70,7 @@ class DiscussionController < ApplicationController
 		raise ActiveRecord::RecordNotFound unless @comment
 		@discussion = @comment.discussion
 		render :update do |page|
+			page.hide 'response'
 			page.replace_html "comment_#{@comment.id}", :partial => 'comment_form'
         end
     end

@@ -1,3 +1,5 @@
+<%= textile_editor_support %>
+
 <h1><%= d_back(@discussion) %></h1>
 
 <div class="discussion <%= d_kind(@discussion).downcase %>">
@@ -15,7 +17,9 @@
 
 <%= render :partial => "comment", :collection => @discussion.comments %>
 
-<h2>Your response:</h2>
-<fieldset>
-	<%= render :partial => 'comment_form' %>
-</fieldset>
+<div id="response">
+	<h2>Your response:</h2>
+	<fieldset>
+		<%= render :partial => 'comment_form' %>
+	</fieldset>
+</div>

@@ -1,8 +1,10 @@
 <fieldset>
 <% form_for :discussion, @discussion, :url => { :action => 'update', :id => params[:id] } do |f| %>
-	Body: <br/><%= f.text_area :body, :rows => 20, :cols => 50 %><br/>
+	Body: <br/>
+	<%= textile_editor "discussion", "body", :rows => 20, :cols => 50, :tabindex => 2 %><br/>
 	<%= f.hidden_field :space_id, :value => params[:id] %>
 	
+	<%= textile_editor_initialize -%>
 	<%= submit_tag 'Save' %>
 <% end %>
 </fieldset>

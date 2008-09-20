@@ -1,5 +1,6 @@
 <% form_for :comment, @comment, :url => "/discussion/comment/#{@comment.id if @comment}" do |f| %>
 	<%= f.hidden_field :discussion_id, :value => @discussion.id %>
-	<%= f.text_area :body, :rows => 20 %><br/>
+	<%= textile_editor 'comment', 'body' -%><br/><br/>
+	<%= textile_editor_initialize -%>
 	<%= submit_tag %>
 <% end %>
