@@ -8,7 +8,7 @@
 		<%= @discussion.subject %> 
 		<em>Posted by <%= u(@discussion.user) %> <%= time_ago_in_words @discussion.created_at %> ago</em>
 	</h1>
-	<span id="discussion_body"><%= cloth(@discussion.body) %>
+	<span id="discussion_text"><%= cloth(@discussion.body) %>
 	<% if @discussion.user_id == current_user.id %>
 		<%= link_to_remote "Edit discussion", :url => {:action => 'edit', :id => @discussion.id} %>
 	<% end %>

@@ -60,7 +60,7 @@ class DiscussionController < ApplicationController
 		raise ActiveRecord::RecordNotFound unless @discussion
 		render :update do |page|
 			page.hide 'response'
-			page.replace_html "discussion_body", :partial => 'discussion_edit_form'
+			page.replace_html "discussion_text", :partial => 'discussion_edit_form'
 		end
 		
 	end
